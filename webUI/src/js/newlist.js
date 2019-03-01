@@ -6,39 +6,30 @@ $(function () {
 
 });
 
-// 状态显示
-function operateState(value, row, index) {
-    if (value === '制单') {
-        return '<span class="pt-primary">'+value+'</span>'
-    }
-    if (value === '已作废') {
+// 物料质量
+function quality(value, row, index) {
+    if (value === '货损') {
         return '<span class="pt-warn">'+value+'</span>'
     }
-    if (value === '已入库') {
-        return '<span class="pt-success">'+value+'</span>'
+    if (value === '箱损') {
+        return '<span class="pt-warn">'+value+'</span>'
     }
-    if (value === '已预约入库') {
+    if (value === '正常品') {
         return '<span class="pt-success">'+value+'</span>'
     }
     return value
 }
-
-// 入库单类型
-function docType(value, row, index) {
-    if (value === '正常入库') {
-        return '<span class="pt-primary">'+value+'</span>'
-    }
-    if (value === '平账入库') {
-        return '<span class="pt-primary">'+value+'</span>'
-    }
-    return value
+//删除操作
+function operateFormatter(value, row, index) {
+    return [
+        '<button type="button" class="RoleOfdelete btn btn-xs btn-default btn-link" onclick="deleteItem('+index+')">删除</button>',
+    ].join('');
 }
-
 var TableInit = function () {
     var oTableInit = new Object();
     //初始化Table
     oTableInit.Init = function () {
-        $('#tb_departments').bootstrapTable({
+        $('#add_godow_list').bootstrapTable({
             //添加url
             method: 'get',                      //请求方式（*）
             striped: true,                      //是否显示行间隔色
@@ -65,43 +56,46 @@ var TableInit = function () {
 
                 [
                     {
-                        checkbox:true
-                    },{
-                        field: 'index',
-                        title: '序号'
-                    },{
-                        field: 'state',
-                        title: '状态',
-                        formatter: operateState
-                    },{
-                        field: 'docNo',
-                        title: '入库单号',
-                    },{
-                        field: 'documentType',
-                        title: '入库单类型',
-                        formatter:docType
-                    },{
-                        field: 'shipperName',
-                        title: '货主名称'
-                    },{
-                        field: 'totalNo',
-                        title: '总数量'
-                    },{
-                        field: 'totalWeight',
-                        title: '总重量(kg)',
-                    },{
-                        field: 'totalVolume',
-                        title: '总体积(m³)',
-                    },{
-                        field: 'docDate',
-                        title: '入库日期',
-                    },{
-                        field: 'makingTime',
-                        title: '制单时间',
-                    },{
-                        field: 'orderTime',
-                        title: '预约入库时间',
-                    },
+                    field: 'index',
+                    title: '序号'
+                },{
+                    field: 'good_code',
+                    title: '物料编码',
+                },{
+                    field: 'good_name',
+                    title: '物料名称'
+                },{
+                    field: 'good_en_name',
+                    title: '英文名称'
+                },{
+                    field: 'num',
+                    title: '数量'
+                },{
+                    field: 'weight',
+                    title: '重量(kg)',
+                },{
+                    field: 'volume',
+                    title: '体积(m³)',
+                },{
+                    field: 'good_quality',
+                    title: '物料质量',
+                    formatter:quality
+                },{
+                    field: 'deposit_company',
+                    title: '存放单位',
+                },{
+                    field: 'plant_name',
+                    title: '目标仓库',
+                },{
+                    field: 'area_name',
+                    title: '目标库区',
+                },{
+                    field: 'loc_name',
+                    title: '目标库位',
+                },{
+                    field: 'id',
+                    title: '批次',
+                },
                 ]
             ],
         });
@@ -117,6 +111,10 @@ var TableInit = function () {
     };
     return oTableInit;
 };
+//删除
+function deleteItem(e) {
+    alert('删除操作，序号' + e)
+}
 
 $.fn.bootstrapTable.locales['zh-CN'] = {
     formatLoadingMessage: function () {

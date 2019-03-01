@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增入库单</title>
+    <!-- 1 bootstrap基础css -->
+    <link href="../libs/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" >
+    <!-- 2 table表格css -->
+    <link href="../libs/bootstrap-3.3.7-dist/css/bootstrap-table.min.css" rel="stylesheet" >
+    <!-- 3 treeview树css -->
+    <link href="../libs/bootstrap-3.3.7-dist/css/bootstrap-treeview.min.css" rel="stylesheet" >
+    <!-- 4 datetimepicker时间选择css -->
+    <link href="../libs/bootstrap-3.3.7-dist/css/bootstrap-datetimepicker.min.css" rel="stylesheet" >
+    <!-- 5 select选择框css -->
+    <link href="../libs/bootstrap-3.3.7-dist/css/bootstrap-select.css" rel="stylesheet" >
+    <!-- 6 fileinput上传文件css -->
+    <link href="../libs/bootstrap-3.3.7-dist/css/fileinput.min.css" rel="stylesheet" >
+    <!-- 7 icheck单选+多选css -->
+    <link href="../libs/bootstrap-3.3.7-dist/css/icheck-blue.css" rel="stylesheet">
+    <!-- 8 Validator验证css -->
+    <link href="../libs/bootstrap-3.3.7-dist/css/bootstrapValidator.min.css" rel="stylesheet" >
+    <!-- 9 layer弹框css -->
+    <link href="../libs/layer/layer-new.css" rel="stylesheet" >
+    <!-- 10 引入字体css -->
+    <link href="../libs/bootstrap-3.3.7-dist/fonts/iconfont.css" rel="stylesheet">
+    <!-- 11 页面样式css -->
+    <link href="../src/css/pt-main.css" rel="stylesheet" >
+
+    <!-- 优先引入jquery1.12.4版本 -->
+    <script src="../libs/jquery/jquery-1.12.4.js"></script>
+    <!-- 1 bootstrap基础js -->
+    <script src="../libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <!-- 2 table表格js -->
+    <script src="../libs/bootstrap-3.3.7-dist/js/bootstrap-table.min.js"></script>
+    <!-- 2 table列表数据js 可删除？ -->
+    <script src="../libs/bootstrap-3.3.7-dist/js/bootstrap-table-data.js"></script>
+    <!-- 3 treeview树js -->
+    <script src="../libs/bootstrap-3.3.7-dist/js/bootstrap-treeview.js"></script>
+    <!-- 4 datetimepicker时间选择js -->
+    <script src="../libs/bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.js"></script>
+    <!-- 5 select选择框js -->
+    <script src="../libs/bootstrap-3.3.7-dist/js/bootstrap-select.min.js"></script>
+    <!-- 6 fileinput上传文件js -->
+    <script src="../libs/bootstrap-3.3.7-dist/js/fileinput.min.js"></script>
+    <!-- 6 fileinput中文包js -->
+    <script src="../libs/bootstrap-3.3.7-dist/js/fileinput_locale_zh.js"></script>
+    <!-- 7 icheck单选+多选js -->
+    <script src="../libs/bootstrap-3.3.7-dist/js/icheck.min.js"></script>
+    <!-- 8 Validator验证js -->
+    <script src="../libs/bootstrap-3.3.7-dist/js/bootstrapValidator.min.js"></script>
+    <!-- 9 layer弹框js -->
+    <script src="../libs/layer/layer.js"></script>
+    <!-- 9 以下是覆盖layer.js中的css样式，必须放在layer.js下面 -->
+    <link href="../libs/layer/layer-new.css" rel="stylesheet" >
+    <!-- 11 页面js -->
+    <script src="../src/js/main.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 column">
+
+                <div class="column pt-btn-line" style="margin-bottom: 1px" >
+                    <label ><font size="3">入库单详情新增</font></label>
+                    <button type="submit" class="btn w100 btn-lg btn-default" >保存并提交</button>
+                    <button  class="btn w60 btn-lg btn-default btn-default" >取消</button>
+                    <hr />
+                </div>
+
+                <form class="form-horizontal pt-form-full" role="form">
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 col-xs-6" for="godow_no"><span> ※ </span>入库单号</label>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-6">
+                                <input type="text" class="form-control" name="name" id="godow_no" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 col-xs-6" for="owner_name"><span> ※ </span>货主</label>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-6">
+                                <input type="text" class="form-control" name="name" id="owner_name" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 col-xs-6" for="entrust_no">委托单号</label>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-6">
+                                <input type="text" class="form-control" name="name" id="entrust_no" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 col-xs-6" for="extra_no">备用号</label>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-6">
+                                <input type="text" class="form-control" name="name" id="extra_no" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 col-xs-6" for="totaln"><span> ※ </span>总数量</label>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-6">
+                                <input type="text" class="form-control" name="name" id="totaln" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 col-xs-6" for="totalw"><span> ※ </span>总重量(kg)</label>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-6">
+                                <input type="text" class="form-control" name="name" id="totalw" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 col-xs-6" for="totalv"><span> ※ </span>总体积(m³)</label>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-6">
+                                <input type="text" class="form-control" name="name" id="totalv" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="col-lg-2 col-md-2 col-sm-2 col-xs-6" for="godow_type"><span> ※ </span>入库单类型</label>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-6">
+                                <select id="godow_type" name="godow_type" class="selectpicker"  title="请选择">
+                                    <option>正常入库</option>
+                                    <option>平账入库</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="col-lg-1 col-md-1 col-sm-1 col-xs-6" for="remark">备注</label>
+                            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-6">
+                                <textarea id="remark" class="form-control" name="remark" style="min-height: 108px"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 column">
+
+                <div class="column pt-btn-line">
+                    <hr />
+                    <label ><font size="3">入库单明细新增</font></label>
+                    <button type="button" class="btn w60 btn-default">新增</button>
+                    <button type="button" class="btn w60 btn-default">删除</button>
+                    <hr />
+                </div>
+
+                <!--bootstrap 表格-->
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 column">
+                        <div class="table-wrap">
+
+                            <table id="add_godow_list">
+                                <tr data-index="0">
+                                    <td style="">1</td>
+                                    <td style="">AP0001</td>
+                                    <td style="">苹果</td>
+                                    <td style=""></td>
+                                    <td style="">10</td>
+                                    <td style="">20</td>
+                                    <td style="">70</td>
+                                    <td style="">正常品</td>
+                                    <td style="">箱</td>
+                                    <td style="">A仓库</td>
+                                    <td style="">A库区</td>
+                                    <td style="">1库位</td>
+                                    <td style="">201902190001</td>
+                                </tr>
+                                <tr data-index="1">
+                                    <td style="">2</td>
+                                    <td style="">CP00001</td>
+                                    <td style="">电脑</td>
+                                    <td style=""></td>
+                                    <td style="">20</td>
+                                    <td style="">20</td>
+                                    <td style="">70</td>
+                                    <td style="">箱损</td>
+                                    <td style="">台</td>
+                                    <td style="">B仓库</td>
+                                    <td style="">A库区</td>
+                                    <td style="">1库位</td>
+                                    <td style="">201902190002</td>
+                                </tr>
+                                <tr data-index="2">
+                                    <td style="">3</td>
+                                    <td style="">MK0001</td>
+                                    <td style="">牛奶</td>
+                                    <td style=""></td>
+                                    <td style="">10</td>
+                                    <td style="">20</td>
+                                    <td style="">80</td>
+                                    <td style="">货损</td>
+                                    <td style="">箱</td>
+                                    <td style="">B仓库</td>
+                                    <td style="">B库区</td>
+                                    <td style="">1库位</td>
+                                    <td style="">201902190003</td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../src/js/newlist.js"></script>
+</body>
+</html>
